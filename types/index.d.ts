@@ -1,19 +1,20 @@
-/* es-lint disabled no-unused-vars */
+/* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
- params: { [key: string]: string },
- searchParams: { [key: string]: string[] | undefined }
-}
+ params: { [key: string]: string };
+ searchParams: { [key: string]: string | string[] | undefined };
+};
 
 declare type Gender = "Male" | "Female" | "Other";
 declare type Status = "pending" | "scheduled" | "cancelled";
 
 declare interface CreateUserParams {
- $id: string;
+ name: string;
+ email: string;
+ phone: string;
 }
-
 declare interface User extends CreateUserParams {
- $id: string
+ $id: string;
 }
 
 declare interface RegisterUserParams extends CreateUserParams {
@@ -28,7 +29,7 @@ declare interface RegisterUserParams extends CreateUserParams {
  insuranceProvider: string;
  insurancePolicyNumber: string;
  allergies: string | undefined;
- currentMedications: string | undefined;
+ currentMedication: string | undefined;
  familyMedicalHistory: string | undefined;
  pastMedicalHistory: string | undefined;
  identificationType: string | undefined;
@@ -45,11 +46,11 @@ declare type CreateAppointmentParams = {
  schedule: Date;
  status: Status;
  note: string | undefined;
-}
+};
 
 declare type UpdateAppointmentParams = {
  appointmentId: string;
  userId: string;
  appointment: Appointment;
  type: string;
-}
+};
